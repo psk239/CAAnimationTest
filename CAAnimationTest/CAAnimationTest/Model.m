@@ -22,6 +22,8 @@ static double DEFAULT_VALUE = 4.0f;
 @synthesize timer;
 @synthesize interval;
 
+#pragma mark - Initailizers
+
 - (instancetype) init
 {
     self = [super init];
@@ -39,6 +41,8 @@ static double DEFAULT_VALUE = 4.0f;
     }
     return self;
 }
+
+#pragma mark - Instance Methods
 
 - (void) changeValue
 {

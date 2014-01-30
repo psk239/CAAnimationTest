@@ -10,6 +10,7 @@
 #import "Model.h"
 
 typedef NS_ENUM(NSUInteger, AnimationType) {
+    AnimationTypeNone,
     AnimationTypeFade,
     AnimationTypeScaleAndRotate
 };
@@ -24,12 +25,14 @@ typedef NS_ENUM(NSUInteger, AnimationType) {
 @implementation MainViewController
 @synthesize imageView, model, statusLabel;
 
+#pragma mark - Initializers
+
 - (instancetype) init
 {
     self = [super init];
     if (self)
     {
-        self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"robokill2_Icon.png"]];
+        self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"robokill2_Icon.png"]]; //heh.
         [self.imageView setFrame:CGRectMake(0.0f, 0.0f, 50.0f, 50.0f)];
         [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
         self.model = [[Model alloc] init];
@@ -39,12 +42,15 @@ typedef NS_ENUM(NSUInteger, AnimationType) {
     return self;
 }
 
+#pragma mark - Apple Provided Methods
+
 - (void) loadView
 {
     [super loadView];
     
     CGSize btnSize = CGSizeMake(self.view.bounds.size.width/2, 50.0f);
     
+    //Generate Fade Button
     CGRect fadeRect = self.view.bounds;
     fadeRect.size = btnSize;
     fadeRect.origin.y = self.view.bounds.size.height - btnSize.height;
@@ -56,6 +62,9 @@ typedef NS_ENUM(NSUInteger, AnimationType) {
     [fadeAnimationBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [fadeAnimationBtn addTarget:self action:@selector(startFadeAnimation) forControlEvents:UIControlEventTouchUpInside];
     
+    
+    
+    //Generate Slide and Rotate Button
     CGRect slideRect = fadeRect;
     slideRect.origin.x = btnSize.width;
     
@@ -65,6 +74,8 @@ typedef NS_ENUM(NSUInteger, AnimationType) {
     [slideAnimationBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [slideAnimationBtn addTarget:self action:@selector(startSlideAndRotateAnimation) forControlEvents:UIControlEventTouchUpInside];
     
+    
+    //Generate Status Label
     CGRect labelRect = self.view.bounds;
     labelRect.size.height = 50.0f;
     labelRect.origin.y = fadeAnimationBtn.frame.origin.y - labelRect.size.height;
@@ -75,6 +86,8 @@ typedef NS_ENUM(NSUInteger, AnimationType) {
     
     [self centerImageView];
 
+    
+    // Add everything to the view
     [self.view addSubview:fadeAnimationBtn];
     [self.view addSubview:slideAnimationBtn];
     [self.view addSubview:self.statusLabel];
@@ -121,6 +134,7 @@ typedef NS_ENUM(NSUInteger, AnimationType) {
     }
 }
 
+#pragma mark - Animations
 
 - (void) startFadeAnimation
 {
@@ -192,6 +206,8 @@ typedef NS_ENUM(NSUInteger, AnimationType) {
     
     [self.imageView.layer addAnimation:group forKey:@"slideAndRotateAnimation"];
 }
+
+#pragma mark - Convenience Methods
 
 - (void) updateStatusValueWithValue:(float) value
 {
