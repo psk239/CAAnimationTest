@@ -19,6 +19,8 @@
 		0B47B731189A10C500E4FA7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B47B719189A10C500E4FA7C /* UIKit.framework */; };
 		0B47B739189A10C500E4FA7C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B47B737189A10C500E4FA7C /* InfoPlist.strings */; };
 		0B47B73B189A10C500E4FA7C /* CAAnimationTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B47B73A189A10C500E4FA7C /* CAAnimationTestTests.m */; };
+		0B47B746189A114400E4FA7C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B47B745189A114400E4FA7C /* MainViewController.m */; };
+		0B47B749189A173B00E4FA7C /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B47B748189A173B00E4FA7C /* Model.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		0B47B736189A10C500E4FA7C /* CAAnimationTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CAAnimationTestTests-Info.plist"; sourceTree = "<group>"; };
 		0B47B738189A10C500E4FA7C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B47B73A189A10C500E4FA7C /* CAAnimationTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAAnimationTestTests.m; sourceTree = "<group>"; };
+		0B47B744189A114400E4FA7C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		0B47B745189A114400E4FA7C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		0B47B747189A173B00E4FA7C /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		0B47B748189A173B00E4FA7C /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,10 @@
 			children = (
 				0B47B724189A10C500E4FA7C /* AppDelegate.h */,
 				0B47B725189A10C500E4FA7C /* AppDelegate.m */,
+				0B47B747189A173B00E4FA7C /* Model.h */,
+				0B47B748189A173B00E4FA7C /* Model.m */,
+				0B47B744189A114400E4FA7C /* MainViewController.h */,
+				0B47B745189A114400E4FA7C /* MainViewController.m */,
 				0B47B727189A10C500E4FA7C /* Images.xcassets */,
 				0B47B71C189A10C500E4FA7C /* Supporting Files */,
 			);
@@ -239,7 +249,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B47B726189A10C500E4FA7C /* AppDelegate.m in Sources */,
+				0B47B746189A114400E4FA7C /* MainViewController.m in Sources */,
 				0B47B722189A10C500E4FA7C /* main.m in Sources */,
+				0B47B749189A173B00E4FA7C /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
